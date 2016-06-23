@@ -1,4 +1,4 @@
-/* This contract is deployed at 0xaed5a41450b38fc0ea0f6f203a985653fe187d9c with the ABI:
+/* This contract is deployed at 0xaED5a41450B38FC0EA0F6F203a985653fE187d9c with the ABI:
 [
     {
         "constant": true,
@@ -107,8 +107,8 @@ contract RNG {
     event RandomNumberGuessed(uint random_number, address guesser);
     function Guess(uint _guess) returns (bool) {
         if (RandomNumber() == _guess) {
-            if (!msg.sender.send(this.balance)) throw;
             RandomNumberGuessed(_guess, msg.sender);
+            if (!msg.sender.send(this.balance)) throw;
             return true;
         }
         return false;
