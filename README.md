@@ -1,6 +1,8 @@
 # rng-sol
 
-Solidity contract providing a (somewhat pseudo-) random number generator service. The current version is deployed at 0xaED5a41450B38FC0EA0F6F203a985653fE187d9c.
+UPDATE: This code was trivially exploited since the "random" number is easily guessed using the same algorithm that generated it.
+
+Solidity contract providing a (completely non-) random number generator service. The current version is deployed at 0xaED5a41450B38FC0EA0F6F203a985653fE187d9c.
 
 There is a function called `Guess(uint)` and an event called `RandomNumberGuessed(uint random_number, address guesser)` that announces if you're right. If you think you can predict or cause the `Random()` to have a certain value, feel free to deposit some ETH into the contract & call `Guess()` with the correct value to retrieve it.
 
